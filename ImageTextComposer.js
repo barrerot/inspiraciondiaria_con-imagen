@@ -64,7 +64,7 @@ class ImageTextComposer {
         const signatureFont = await Jimp.loadFont(Jimp.FONT_SANS_32_BLACK); // Fuente más pequeña para la firma
         const textWidth = Jimp.measureText(signatureFont, signature);
         const xPos = (image.bitmap.width - textWidth) / 2;
-        const yPos = image.bitmap.height - 300; // Posición de la firma
+        const yPos = image.bitmap.height - 240; // Posición de la firma
         image.print(signatureFont, xPos, yPos, signature);
     }
 }
