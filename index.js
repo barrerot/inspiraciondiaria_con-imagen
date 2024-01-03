@@ -59,7 +59,7 @@ const publishPost = () => {
     .on('data', async (row) => {
       const today = moment().format('YYYY-MM-DD');
       if (row.fecha === today) {
-        const postResult = await createPost(today, row.frases);
+        //const postResult = await createPost(today, row.frases);
         // Configura estas variables con tus propios valores
 const backgroundImagePath = "./assets/background.png"; // Ruta a la imagen de fondo
 const text = row.frases;
@@ -77,9 +77,7 @@ const composer = new ImageTextComposer(backgroundImagePath, outputPath);
 composer.createImageWithText(text)
     .then(() => console.log('Proceso completado.'))
     .catch(err => console.error('Error al crear la imagen:', err));
-        if (postResult) {
-          console.log(`Publicado: ${row.frases}`);
-        }
+       
       }
     })
     .on('end', () => {
